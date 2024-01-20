@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="wheel_leg_rb">
+
+  <mujoco>
+        <compiler 
+        meshdir="/home/qingziyi/model_urdf/wheel_leg_rb/meshes/" 
+        balanceinertia="true" 
+        discardvisual="false" />
+  </mujoco>
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.00234896642138976 0.000528264476886211 0.0292998878447767"
+        rpy="0 0 0" />
+      <mass
+        value="6.96701060654247" />
+      <inertia
+        ixx="0.0180580342987764"
+        ixy="7.65479218270793E-07"
+        ixz="-8.1565087954324E-06"
+        iyy="0.0201571580373544"
+        iyz="4.41750032728832E-06"
+        izz="0.0290320991948916" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheel_leg_rb/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheel_leg_rb/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_hipL_link">
+    <inertial>
+      <origin
+        xyz="0.055432 -0.00075146 -0.033127"
+        rpy="0 0 0" />
+      <mass
+        value="0.14833" />
+      <inertia
+        ixx="0.00013751"
+        ixy="-3.7915E-07"
+        ixz="0.00016166"
+        iyy="0.00044164"
+        iyz="2.2659E-07"
+        izz="0.00030639" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheel_leg_rb/meshes/left_hipL_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.33333 0.33333 0.33333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheel_leg_rb/meshes/left_hipL_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hipL_joint"
+    type="revolute">
+    <origin
+      xyz="0.075163 0.18486 0.058"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_hipL_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_kneelL_link">
+    <inertial>
+      <origin
+        xyz="-0.07826 -0.008148 -0.13121"
+        rpy="0 0 0" />
+      <mass
+        value="0.38007" />
+      <inertia
+        ixx="0.00083457"
+        ixy="-4.8534E-06"
+        ixz="-0.000449"
+        iyy="0.0012354"
+        iyz="-3.2763E-06"
+        izz="0.00041614" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheel_leg_rb/meshes/left_kneelL_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.88235 0.79608 0.65882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheel_leg_rb/meshes/left_kneelL_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_kneelL_joint"
+    type="revolute">
+    <origin
+      xyz="0.12884 0.0135 -0.076809"
+      rpy="0 0 0" />
+    <parent
+      link="left_hipL_link" />
+    <child
+      link="left_kneelL_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_wheel_link">
+    <inertial>
+      <origin
+        xyz="-0.00030304 0.035782 0.00018059"
+        rpy="0 0 0" />
+      <mass
+        value="1.9175" />
+      <inertia
+        ixx="0.0047892"
+        ixy="3.1074E-06"
+        ixz="-1.0633E-05"
+        iyy="0.009277"
+        iyz="-1.68E-06"
+        izz="0.0047739" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheel_leg_rb/meshes/left_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.33333 0.33333 0.33333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheel_leg_rb/meshes/left_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.16236 -0.0005 -0.21573"
+      rpy="0 0 0" />
+    <parent
+      link="left_kneelL_link" />
+    <child
+      link="left_wheel_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="left_hipR_link">
+    <inertial>
+      <origin
+        xyz="-0.038877 -0.00074733 -0.051295"
+        rpy="0 0 0" />
+      <mass
+        value="0.14882" />
+      <inertia
+        ixx="0.0002751"
+        ixy="2.5518E-07"
+        ixz="-0.0001762"
+        iyy="0.00044439"
+        iyz="3.367E-07"
+        izz="0.00017155" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheel_leg_rb/meshes/left_hipR_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.33333 0.33333 0.33333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheel_leg_rb/meshes/left_hipR_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_hipR_joint"
+    type="revolute">
+    <origin
+      xyz="-0.074837 0.18486 0.058"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_hipR_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_kneelR_link">
+    <inertial>
+      <origin
+        xyz="0.10721 -0.0022722 -0.10246"
+        rpy="0 0 0" />
+      <mass
+        value="0.3063" />
+      <inertia
+        ixx="0.0011212"
+        ixy="8.4524E-07"
+        ixz="0.0012602"
+        iyy="0.0029352"
+        iyz="-9.8977E-07"
+        izz="0.0018265" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheel_leg_rb/meshes/left_kneelR_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheel_leg_rb/meshes/left_kneelR_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_kneelR_joint"
+    type="revolute">
+    <origin
+      xyz="-0.090732 0.0135 -0.11945"
+      rpy="0 0 0" />
+    <parent
+      link="left_hipR_link" />
+    <child
+      link="left_kneelR_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_hipL_link">
+    <inertial>
+      <origin
+        xyz="0.049138 0.00066859 -0.0419"
+        rpy="0 0 0" />
+      <mass
+        value="0.14833" />
+      <inertia
+        ixx="0.00019532"
+        ixy="-3.361E-07"
+        ixz="0.00018043"
+        iyy="0.00044164"
+        iyz="2.8659E-07"
+        izz="0.00024858" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheel_leg_rb/meshes/right_hipL_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.33333 0.33333 0.33333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheel_leg_rb/meshes/right_hipL_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hipL_joint"
+    type="revolute">
+    <origin
+      xyz="0.075163 -0.18414 0.058"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_hipL_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_kneelL_link">
+    <inertial>
+      <origin
+        xyz="-0.10294 0.0016697 -0.1149"
+        rpy="0 0 0" />
+      <mass
+        value="0.29445" />
+      <inertia
+        ixx="0.0013194"
+        ixy="7.6614E-07"
+        ixz="-0.0012995"
+        iyy="0.0029342"
+        iyz="1.0522E-06"
+        izz="0.0016273" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheel_leg_rb/meshes/right_kneelL_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheel_leg_rb/meshes/right_kneelL_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_kneelL_joint"
+    type="revolute">
+    <origin
+      xyz="0.11424 -0.0135 -0.097203"
+      rpy="0 0 0" />
+    <parent
+      link="right_hipL_link" />
+    <child
+      link="right_kneelL_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_hipR_link">
+    <inertial>
+      <origin
+        xyz="-0.050507 0.00066803 -0.039895"
+        rpy="0 0 0" />
+      <mass
+        value="0.14882" />
+      <inertia
+        ixx="0.00018295"
+        ixy="3.3152E-07"
+        ixz="-0.00017916"
+        iyy="0.00044439"
+        iyz="2.6187E-07"
+        izz="0.0002637" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheel_leg_rb/meshes/right_hipR_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheel_leg_rb/meshes/right_hipR_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_hipR_joint"
+    type="revolute">
+    <origin
+      xyz="-0.074837 -0.18414 0.058"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_hipR_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_kneelR_link">
+    <inertial>
+      <origin
+        xyz="0.094546 0.008148 -0.12001"
+        rpy="0 0 0" />
+      <mass
+        value="0.38007" />
+      <inertia
+        ixx="0.00071262"
+        ixy="-5.2358E-06"
+        ixz="0.0004876"
+        iyy="0.0012354"
+        iyz="2.6223E-06"
+        izz="0.00053809" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheel_leg_rb/meshes/right_kneelR_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheel_leg_rb/meshes/right_kneelR_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_kneelR_joint"
+    type="revolute">
+    <origin
+      xyz="-0.11781 -0.0135 -0.092849"
+      rpy="0 0 0" />
+    <parent
+      link="right_hipR_link" />
+    <child
+      link="right_kneelR_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_wheel_link">
+    <inertial>
+      <origin
+        xyz="0.00020616 -0.035782 0.00028625"
+        rpy="0 0 0" />
+      <mass
+        value="1.9175" />
+      <inertia
+        ixx="0.004779"
+        ixy="2.1824E-06"
+        ixz="1.2833E-05"
+        iyy="0.009277"
+        iyz="2.7777E-06"
+        izz="0.0047841" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheel_leg_rb/meshes/right_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.019608 0.019608 0.019608 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheel_leg_rb/meshes/right_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.18885 0.0005 -0.19296"
+      rpy="0 0 0" />
+    <parent
+      link="right_kneelR_link" />
+    <child
+      link="right_wheel_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+</robot>

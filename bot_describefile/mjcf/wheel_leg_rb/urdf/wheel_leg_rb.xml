@@ -1,0 +1,121 @@
+<mujoco model="wheel_leg_rb">
+    <compiler angle="radian" meshdir="/home/qingziyi/model_urdf/wheel_leg_rb/meshes/" />
+    <size njmax="500" nconmax="100" />
+    <asset>
+        <!--平衡车模型-->
+        <mesh name="base_link" file="base_link.STL" />
+        <mesh name="left_hipL_link" file="left_hipL_link.STL" />
+        <mesh name="left_kneelL_link" file="left_kneelL_link.STL" />
+        <mesh name="left_wheel_link" file="left_wheel_link.STL" />
+        <mesh name="left_hipR_link" file="left_hipR_link.STL" />
+        <mesh name="left_kneelR_link" file="left_kneelR_link.STL" />
+        <mesh name="right_hipL_link" file="right_hipL_link.STL" />
+        <mesh name="right_kneelL_link" file="right_kneelL_link.STL" />
+        <mesh name="right_hipR_link" file="right_hipR_link.STL" />
+        <mesh name="right_kneelR_link" file="right_kneelR_link.STL" />
+        <mesh name="right_wheel_link" file="right_wheel_link.STL" />
+
+        <!--环境模型-->
+        <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="512" />
+        <texture name="texplane" type="2d" builtin="checker" rgb1=".2 .3 .4" rgb2=".1 0.15 0.2" width="512" height="512" mark="cross" markrgb=".8 .8 .8" />
+        <material name="matplane" reflectance="0.3" texture="texplane" texrepeat="1 1" texuniform="true" />
+
+    </asset>
+    <worldbody>
+        <!--车体-->
+        <body name="base_link" pos="0.00234896642138976 0.000528264476886211 0.0292998878447767">
+            <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.898039 0.917647 0.929412 1" mesh="base_link" />
+            <geom type="mesh" rgba="0.898039 0.917647 0.929412 1" mesh="base_link" />
+            <freejoint name="base_root" />
+
+            <!--左腿左关节-->
+            <body name="left_hipL_link" pos="0.075163 0.18486 0.058">
+                <inertial pos="0.055432 -0.00075146 -0.033127" quat="0.34674 0.61586 0.616285 0.347392" mass="0.14833" diaginertia="0.00044164 0.000404334 3.95651e-05" />
+                <joint name="left_hipL_joint" pos="0 0 0" axis="0 1 0" />
+                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.33333 0.33333 0.33333 1" mesh="left_hipL_link" />
+                <geom type="mesh" rgba="0.33333 0.33333 0.33333 1" mesh="left_hipL_link" />
+                <body name="left_kneelL_link" pos="0.12884 0.0135 -0.076809">
+                    <inertial pos="-0.07826 -0.008148 -0.13121" quat="0.671423 0.198289 0.197566 0.686177" mass="0.38007" diaginertia="0.00123547 0.00112066 0.000129979" />
+                    <joint name="left_kneelL_joint" pos="0 0 0" axis="0 1 0" />
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.88235 0.79608 0.65882 1" mesh="left_kneelL_link" />
+                    <geom type="mesh" rgba="0.88235 0.79608 0.65882 1" mesh="left_kneelL_link" />
+                    <body name="left_wheel_link" pos="-0.16236 -0.0005 -0.21573">
+                        <inertial pos="-0.00030304 0.035782 0.00018059" quat="0.687646 0.165798 0.165941 0.687108" mass="1.9175" diaginertia="0.009277 0.00479465 0.00476845" />
+                        <joint name="left_wheel_joint" pos="0 0 0" axis="0 1 0" />
+                        <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.33333 0.33333 0.33333 1" mesh="left_wheel_link" />
+                        <geom type="mesh" rgba="0.33333 0.33333 0.33333 1" mesh="left_wheel_link" />
+                    </body>
+                </body>
+            </body>
+
+            <!--左腿右关节-->
+            <body name="left_hipR_link" pos="-0.074837 0.18486 0.058">
+                <inertial pos="-0.038877 -0.00074733 -0.051295" quat="0.671072 0.223613 0.222928 0.670793" mass="0.14882" diaginertia="0.00044439 0.000406974 3.96752e-05" />
+                <joint name="left_hipR_joint" pos="0 0 0" axis="0 1 0" />
+                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.33333 0.33333 0.33333 1" mesh="left_hipR_link" />
+                <geom type="mesh" rgba="0.33333 0.33333 0.33333 1" mesh="left_hipR_link" />
+                <body name="left_kneelR_link" pos="-0.090732 0.0135 -0.11945">
+                    <inertial pos="0.10721 -0.0022722 -0.10246" quat="0.314928 0.632814 0.633821 0.314066" mass="0.3063" diaginertia="0.0029352 0.00278246 0.000165237" />
+                    <joint name="left_kneelR_joint" pos="0 0 0" axis="0 1 0" />
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="left_kneelR_link" />
+                    <geom type="mesh" rgba="1 1 1 1" mesh="left_kneelR_link" />
+                </body>
+            </body>
+
+            <!--右腿左关节-->
+            <body name="right_hipL_link" pos="0.075163 -0.18414 0.058">
+                <inertial pos="0.049138 0.00066859 -0.0419" quat="0.294001 0.642748 0.643117 0.294686" mass="0.14833" diaginertia="0.00044164 0.000404335 3.95649e-05" />
+                <joint name="right_hipL_joint" pos="0 0 0" axis="0 1 0" />
+                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.33333 0.33333 0.33333 1" mesh="right_hipL_link" />
+                <geom type="mesh" rgba="0.33333 0.33333 0.33333 1" mesh="right_hipL_link" />
+                <body name="right_kneelL_link" pos="0.11424 -0.0135 -0.097203">
+                    <inertial pos="-0.10294 0.0016697 -0.1149" quat="0.6445 0.290148 0.289324 0.645543" mass="0.29445" diaginertia="0.0029342 0.00278194 0.000164762" />
+                    <joint name="right_kneelL_joint" pos="0 0 0" axis="0 1 0" />
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="right_kneelL_link" />
+                    <geom type="mesh" rgba="1 1 1 1" mesh="right_kneelL_link" />
+                </body>
+            </body>
+
+            <!--右腿右关节-->
+            <body name="right_hipR_link" pos="-0.074837 -0.18414 0.058">
+                <inertial pos="-0.050507 0.00066803 -0.039895" quat="0.637473 0.306687 0.306043 0.63711" mass="0.14882" diaginertia="0.00044439 0.000406978 3.96715e-05" />
+                <joint name="right_hipR_joint" pos="0 0 0" axis="0 1 0" />
+                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="right_hipR_link" />
+                <geom type="mesh" rgba="1 1 1 1" mesh="right_hipR_link" />
+                <body name="right_kneelR_link" pos="-0.11781 -0.0135 -0.092849">
+                    <inertial pos="0.094546 0.008148 -0.12001" quat="0.657236 -0.242264 -0.240589 0.671912" mass="0.38007" diaginertia="0.00123547 0.00112065 0.000129982" />
+                    <joint name="right_kneelR_joint" pos="0 0 0" axis="0 1 0" />
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="right_kneelR_link" />
+                    <geom type="mesh" rgba="1 1 1 1" mesh="right_kneelR_link" />
+                    <body name="right_wheel_link" pos="0.18885 0.0005 -0.19296">
+                        <inertial pos="0.00020616 -0.035782 0.00028625" quat="0.30217 0.639482 0.638983 0.302419" mass="1.9175" diaginertia="0.009277 0.00479463 0.00476847" />
+                        <joint name="right_wheel_joint" pos="0 0 0" axis="0 1 0" />
+                        <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.019608 0.019608 0.019608 1" mesh="right_wheel_link" />
+                        <geom type="mesh" rgba="0.019608 0.019608 0.019608 1" mesh="right_wheel_link" />
+                    </body>
+                </body>
+            </body>
+        </body>
+
+        <!--环境-->
+        <light directional="true" diffuse=".4 .4 .4" specular="0.1 0.1 0.1" pos="0 0 5.0" dir="0 0 -1" castshadow="false" />
+        <light directional="true" diffuse=".6 .6 .6" specular="0.2 0.2 0.2" pos="0 0 4" dir="0 0 -1" />
+        <geom name="floor" pos="0 0 -1" size="15 15 1" type="plane" material="matplane" margin="0.001" condim="3" friction="1 0.005 0.0001" />
+
+    </worldbody>
+
+    <!--取消模型碰撞检测-->
+    <contact>
+        <exclude name="coll_left" body1="left_kneelL_link" body2="left_kneelR_link" />
+        <exclude name="coll_left_wheel" body1="left_wheel_link" body2="left_kneelR_link" />
+        <exclude name="coll_right" body1="right_kneelR_link" body2="right_kneelL_link" />
+        <exclude name="coll_right_wheel" body1="right_kneelL_link" body2="right_wheel_link" />
+    </contact>
+
+    <!--闭链-->
+    <equality>
+        <connect name="left_connect" body1="left_kneelL_link" body2="left_kneelR_link" anchor="-0.16236 -0.0005 -0.21573" />
+        <connect name="right_connect" body1="right_kneelR_link" body2="right_kneelL_link" anchor="0.18885 0.0005 -0.19296" />
+    </equality>
+
+</mujoco>
